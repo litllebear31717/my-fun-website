@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bobby's Fun Website</title>
+<style>
+  /* ====== GENERAL STYLES ====== */
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    background-color: #f5f6fa;
+    color: #333;
+  }
+
+  /* ====== NAVIGATION BAR ====== */
+  nav {
+    position: sticky;
+    top: 0;
+    background-color: #0078d7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000;
+  }
+  nav .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+  }
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  nav ul li {
+    margin-left: 20px;
+  }
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+  }
+  nav ul li a:hover {
+    color: #ffe600;
+  }
+
+  /* ====== SECTIONS ====== */
+  section {
+    padding: 60px 20px;
+    text-align: center;
+  }
+  #home {
+    background: linear-gradient(120deg, #0078d7, #00b4d8);
+    color: white;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #home h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+  }
+  #home p {
+    font-size: 1.3em;
+  }
+  #about, #fun, #contact {
+    background: white;
+    margin-top: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  /* ====== BUTTONS ====== */
+  button {
+    background-color: #0078d7;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+  }
+  button:hover {
+    background-color: #005fa3;
+  }
+
+  /* ====== FOOTER ====== */
+  footer {
+    background-color: #0078d7;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ====== NAVIGATION ====== -->
+<nav>
+  <div class="logo">Bobby's Site</div>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#fun">Fun Zone</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ====== HOME SECTION ====== -->
+<section id="home">
+  <h1>Welcome to My Fun Website 🎉</h1>
+  <p>Built with HTML, CSS, and JavaScript!</p>
+  <button onclick="scrollToAbout()">Learn More</button>
+</section>
+
+<!-- ====== ABOUT SECTION ====== -->
+<section id="about">
+  <h2>About Me</h2>
+  <p>Hey there! I'm Bobby, and I made this website just for fun. I enjoy experimenting with web design and learning new coding tricks.</p>
+</section>
+
+<!-- ====== FUN ZONE SECTION ====== -->
+<section id="fun">
+  <h2>Fun Zone 🤖</h2>
+  <p>Click the button to get a random fun fact!</p>
+  <button onclick="showFact()">Give Me a Fact!</button>
+  <p id="fact" style="margin-top:20px; font-weight:bold;"></p>
+</section>
+
+<!-- ====== CONTACT SECTION ====== -->
+<section id="contact">
+  <h2>Contact Me</h2>
+  <p>Want to say hi? Send me an email at: <strong>bobby@example.com</strong></p>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer>
+  <p>&copy; 2025 Bobby's Fun Website | Made with ❤️ using W3Schools</p>
+</footer>
+
+<!-- ====== JAVASCRIPT ====== -->
+<script>
+  function scrollToAbout() {
+    document.querySelector("#about").scrollIntoView({ behavior: "smooth" });
+  }
+
+  function showFact() {
+    const facts = [
+      "Bananas are berries, but strawberries aren't!",
+      "A group of flamingos is called a 'flamboyance'.",
+      "The first website ever made is still online!",
+      "Honey never spoils — archaeologists have found 3000-year-old honey still edible.",
+      "Sharks existed before trees did."
+    ];
+    const randomFact = facts[Math.floor(Math.random() * facts.length)];
+    document.getElementById("fact").textContent = randomFact;
+  }
+</script>
+
+</body>
+</html>
